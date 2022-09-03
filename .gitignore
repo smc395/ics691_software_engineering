@@ -1,0 +1,5 @@
+*.zip
+**/.idea/
+**/test/htmlcov/
+**/test/.coverage
+**/test/__pycache__/
