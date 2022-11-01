@@ -15,7 +15,7 @@ import coverage
 import sys
 
 cov = coverage.Coverage()
-cov.start() # start code coverage
+cov.start()  # start code coverage
 
 sys.path.insert(0, "..\\src\\")  # add src folder to path for python to read
 
@@ -23,7 +23,6 @@ from io import StringIO
 from unittest import TestCase
 from unittest.mock import patch
 from atm import ATM
-
 
 
 class TestATM(TestCase):
@@ -38,9 +37,9 @@ class TestATM(TestCase):
 
     @classmethod
     def tearDownClass(self):
-        cov.stop() # stop code coverage
-        cov.save() # save results
-        cov.html_report() # generate html report of coverage
+        cov.stop()  # stop code coverage
+        cov.save()  # save results
+        cov.html_report()  # generate html report of coverage
 
     # assert that the verify_customer method returns True with correct pin and False with incorrect pin
     def test_verify_valid_customer(self):
@@ -110,7 +109,6 @@ class TestATM(TestCase):
         self.assertFalse(self.atm.withdraw_money(98765, 999, 100))
         balance = self.atm.get_customer_balance(98765, 999)
         self.assertEqual(0.0, balance)
-
 
     # get_customer_balance() tests
     # assert that correct pin and account returns balance
